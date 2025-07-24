@@ -1,0 +1,61 @@
+<div class="auth-container">
+  <div class="auth-wrapper">
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <div class="bancolombia-logo">
+        <svg width="200" height="40" viewBox="0 0 200 40" class="logo-svg">
+          <rect x="0" y="0" width="200" height="40" fill="#212529" rx="4"/>
+          <text x="100" y="25" text-anchor="middle" fill="#FDDA24" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Bancolombia</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Login Form Section -->
+    <div class="login-section">
+      <div class="login-card">
+        <div class="login-header">
+          <h1 class="login-title">Bienvenido</h1>
+          <p class="login-subtitle">Ingresa a la app</p>
+        </div>
+
+        <form class="login-form">
+          <div class="input-group">
+            <label for="username" class="input-label">Número de documento</label>
+            <input
+              id="username"
+              [(ngModel)]="username"
+              name="username"
+              placeholder="Ej: 12345678"
+              class="input-field"
+              type="text"
+              autocomplete="username">
+          </div>
+
+          <div class="input-group">
+            <label for="password" class="input-label">Clave</label>
+            <input
+              id="password"
+              [(ngModel)]="password"
+              name="password"
+              type="password"
+              placeholder="Ingresa tu clave"
+              class="input-field"
+              autocomplete="current-password">
+          </div>
+
+          <button
+            type="button"
+            (click)="login()"
+            class="login-button">
+            Ingresar
+          </button>
+
+          <div class="form-links">
+            <a href="#" class="link">¿Olvidaste tu clave?</a>
+            <a href="#" class="link">Activa tu clave</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
