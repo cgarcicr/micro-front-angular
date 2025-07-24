@@ -1,0 +1,280 @@
+// Colores oficiales de Bancolombia
+$primary-yellow: #FDDA24;
+$secondary-yellow: #E6C000;
+$dark-yellow: #B8950A;
+$blue: #0066CC;
+$light-gray: #F8F9FA;
+$medium-gray: #6C757D;
+$dark-gray: #495057;
+$white: #FFFFFF;
+$border-gray: #E9ECEF;
+$text-dark: #212529;
+
+:host {
+  display: block;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  width: 100%;
+  height: 100vh;
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  background: linear-gradient(135deg, $light-gray 0%, #E3F2FD 100%);
+}
+
+.auth-wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+// Logo Section (Left side)
+.logo-section {
+  flex: 1;
+  background: linear-gradient(135deg, $primary-yellow 0%, $secondary-yellow 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+  }
+}
+
+.bancolombia-logo {
+  position: relative;
+  z-index: 1;
+}
+
+.logo-svg {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+// Login Section (Right side)
+.login-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: $white;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 0;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-title {
+  color: $text-dark;
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.login-subtitle {
+  color: $medium-gray;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-label {
+  color: $dark-gray;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.input-field {
+  padding: 16px;
+  border: 1px solid $border-gray;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  background: $white;
+  color: $text-dark;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-yellow;
+    box-shadow: 0 0 0 2px rgba(253, 218, 36, 0.2);
+  }
+
+  &::placeholder {
+    color: $medium-gray;
+    font-size: 14px;
+  }
+
+  &:hover {
+    border-color: darken($border-gray, 10%);
+  }
+}
+
+.login-button {
+  background: $primary-yellow;
+  color: $text-dark;
+  border: none;
+  border-radius: 4px;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    background: $secondary-yellow;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(253, 218, 36, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(253, 218, 36, 0.2);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(253, 218, 36, 0.4);
+  }
+}
+
+.form-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.link {
+  color: $blue;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: darken($blue, 15%);
+    text-decoration: underline;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .auth-wrapper {
+    flex-direction: column;
+  }
+
+  .logo-section {
+    flex: none;
+    min-height: 200px;
+    padding: 20px;
+  }
+
+  .bancolombia-logo .logo-svg {
+    width: 150px;
+    height: 30px;
+  }
+
+  .login-section {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .login-title {
+    font-size: 28px;
+  }
+
+  .login-card {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-section {
+    min-height: 150px;
+    padding: 16px;
+  }
+
+  .bancolombia-logo .logo-svg {
+    width: 120px;
+    height: 24px;
+  }
+
+  .login-section {
+    padding: 16px;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+
+  .input-field, .login-button {
+    padding: 14px;
+  }
+}
+
+// Loading state for button
+.login-button.loading {
+  position: relative;
+  color: transparent;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(33, 37, 41, 0.3);
+    border-top: 2px solid $text-dark;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+// Focus visible for accessibility
+.login-button:focus-visible,
+.input-field:focus-visible,
+.link:focus-visible {
+  outline: 2px solid $primary-yellow;
+  outline-offset: 2px;
+}
